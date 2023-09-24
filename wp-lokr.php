@@ -28,7 +28,7 @@ use WP_Lokr\Helpers\Plugin_Constants;
 use WP_Lokr\Interfaces\Model_Interface;
 use WP_Lokr\Models\Bootstrap;
 use WP_Lokr\Models\Script_Loader;
-// use WP_Lokr\Models\Admin;
+use WP_Lokr\Models\Admin;
 
 /**
  * Register plugin autoloader.
@@ -182,9 +182,9 @@ class WP_Lokr extends Abstract_Main_Plugin_Class { // phpcs:ignore
         Plugin_Constants::get_instance( $this );
         Helper_Functions::get_instance( $this, $this->Plugin_Constants );
 
-        $activatables = array();
-        $initiables   = array(
-            // Admin::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions ),
+        $activatables   = array();
+        $initiables     = array(
+            Admin::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions ),
         );
         $deactivatables = array();
 
@@ -208,7 +208,7 @@ class WP_Lokr extends Abstract_Main_Plugin_Class { // phpcs:ignore
 }
 
 /**
- * Returns the main instance of BSWC to prevent the need to use globals.
+ * Returns the main instance of WP_Lokr to prevent the need to use globals.
  *
  * @since 1.0.0
  * @return WP_Lokr Main instance of the plugin.

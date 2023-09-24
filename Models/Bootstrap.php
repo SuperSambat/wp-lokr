@@ -118,9 +118,9 @@ class Bootstrap implements Model_Interface {
      * @param Abstract_Main_Plugin_Class $main_plugin      Main plugin object.
      * @param Plugin_Constants           $constants        Plugin constants object.
      * @param Helper_Functions           $helper_functions Helper functions object.
-     * @param array                      $activatables     Array of models implementing BSWC\Interfaces\Activatable_Interface.
-     * @param array                      $initiables       Array of models implementing BSWC\Interfaces\Initiable_Interface.
-     * @param array                      $deactivatables   Array of models implementing BSWC\Interfaces\Deactivatable_Interface.
+     * @param array                      $activatables     Array of models implementing WP_Lokr\Interfaces\Activatable_Interface.
+     * @param array                      $initiables       Array of models implementing WP_Lokr\Interfaces\Initiable_Interface.
+     * @param array                      $deactivatables   Array of models implementing WP_Lokr\Interfaces\Deactivatable_Interface.
      * @return Bootstrap
      */
     public static function get_instance( Abstract_Main_Plugin_Class $main_plugin, Plugin_Constants $constants, Helper_Functions $helper_functions, array $activatables = array(), array $initiables = array(), array $deactivatables = array() ) {
@@ -233,7 +233,7 @@ class Bootstrap implements Model_Interface {
         // Initialize settings options.
         $this->_initialize_plugin_settings_options();
 
-        // Execute 'activate' contract of models implementing BSWC\Interfaces\Activatable_Interface.
+        // Execute 'activate' contract of models implementing WP_Lokr\Interfaces\Activatable_Interface.
         foreach ( $this->_activatables as $activatable ) {
             if ( $activatable instanceof Activatable_Interface ) {
                 $activatable->activate();
@@ -297,7 +297,7 @@ class Bootstrap implements Model_Interface {
      * @param int $blogid Blog ID of the created blog.
      */
     private function _deactivate_plugin( $blogid ) {
-        // Execute 'deactivate' contract of models implementing BSWC\Interfaces\Deactivatable_Interface.
+        // Execute 'deactivate' contract of models implementing WP_Lokr\Interfaces\Deactivatable_Interface.
         foreach ( $this->_deactivatables as $deactivatable ) {
             if ( $deactivatable instanceof Deactivatable_Interface ) {
                 $deactivatable->deactivate();
@@ -334,7 +334,7 @@ class Bootstrap implements Model_Interface {
 
         }
 
-        // Execute 'initialize' contract of models implementing BSWC\Interfaces\Initiable_Interface.
+        // Execute 'initialize' contract of models implementing WP_Lokr\Interfaces\Initiable_Interface.
         foreach ( $this->_initiables as $initiable ) {
             if ( $initiable instanceof Initiable_Interface ) {
                 $initiable->initialize();
