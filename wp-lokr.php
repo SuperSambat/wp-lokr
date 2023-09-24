@@ -29,6 +29,8 @@ use WP_Lokr\Interfaces\Model_Interface;
 use WP_Lokr\Models\Bootstrap;
 use WP_Lokr\Models\Script_Loader;
 use WP_Lokr\Models\Admin;
+use WP_Lokr\Models\Jobs_Post_Type;
+use WP_Lokr\Models\Jobs_Meta;
 
 /**
  * Register plugin autoloader.
@@ -185,6 +187,8 @@ class WP_Lokr extends Abstract_Main_Plugin_Class { // phpcs:ignore
         $activatables   = array();
         $initiables     = array(
             Admin::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions ),
+            Jobs_Post_Type::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions ),
+            Jobs_Meta::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions ),
         );
         $deactivatables = array();
 
