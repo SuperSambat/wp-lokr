@@ -41,11 +41,19 @@
   padding: 0 0 0 12px;
 }
 
+.interface-interface-skeleton__sidebar #poststuff .postbox-container .wp-lokr-job-listing-data-meta-box p.form-field {
+  width: 100%;
+  padding: 0;
+}
+
+.interface-interface-skeleton__sidebar #poststuff .postbox-container .wp-lokr-job-listing-data-meta-box p.form-field:nth-child(2n) {
+  padding: 0;
+}
+
 #poststuff .postbox-container .wp-lokr-job-listing-data-meta-box label {
   display: block;
   font-weight: 700;
   margin: 0;
-  vertical-align: middle;
 }
 
 #poststuff .postbox-container .wp-lokr-job-listing-data-meta-box input {
