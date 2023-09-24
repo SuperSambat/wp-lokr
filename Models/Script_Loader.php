@@ -109,20 +109,9 @@ class Script_Loader implements Model_Interface {
             $post_type = sanitize_text_field( wp_unslash( $_GET['post_type'] ) ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
         }
 
-        // if ( 'woocommerce_page_block-scumbags' === $screen->id ) {
-        // $settings = wp_enqueue_code_editor( array( 'type' => 'application/json' ) );
-        // wp_enqueue_style( 'json-help-content-editor', $this->_constants->DIST_ROOT_URL . 'block-scumbags.css', array(), $this->_constants->VERSION, 'all' );
-        // wp_enqueue_script( 'block-scumbags-admin-js', $this->_constants->DIST_ROOT_URL . 'block-scumbags.js', array( 'jquery', 'code-editor' ), $this->_constants->VERSION, true );
-
-        // wp_localize_script(
-        // 'block-scumbags-admin-js',
-        // 'bswc',
-        // array(
-		// 'codeMirrorSettings' => $settings,
-        // 'editorErrorMessage' => __( 'Please fix the errors in the JSON data before saving.', 'block-scumbags-wc' ),
-        // )
-        // );
-        // }
+        if ( $this->_constants->POST_TYPE_WP_LOKR_JOB_LISTINGS === $post_type ) {
+            wp_enqueue_style( 'wp-lokr-admin-css', $this->_constants->DIST_ROOT_URL . 'wp-lokr-admin.css', array(), $this->_constants->VERSION, 'all' );
+        }
     }
 
     /**

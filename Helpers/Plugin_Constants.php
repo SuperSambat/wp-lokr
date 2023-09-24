@@ -87,6 +87,12 @@ class Plugin_Constants {
             'JS_ROOT_URL'                              => $plugin_dir_url . 'js/',
             'DIST_ROOT_URL'                            => $plugin_dir_url . 'dist/',
 
+            // Post types.
+            'POST_TYPE_WP_LOKR_JOB_LISTINGS'           => 'wp-lokr-job-listings',
+
+            // Taxonomies.
+            'TAXONOMY_WP_LOKR_JOB_LISTINGS_CATEGORIES' => 'wp-lokr-job-listings-categories',
+
             // User capabilities.
             'EDIT_HELP_CONTENT_CAP'                    => 'edit_json_help_content',
 

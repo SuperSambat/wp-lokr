@@ -1,0 +1,9 @@
+.post-type-wp-lokr-job-listings .wp-list-table th.column-wp_lokr_featured,
+.post-type-wp-lokr-job-listings .wp-list-table th.column-wp_lokr_filled {
+  width: 1em;
+} 
+
+.post-type-wp-lokr-job-listings .wp-list-table th.column-wp_lokr_actions {
+  width: 128px;
+  text-align: right;
+}

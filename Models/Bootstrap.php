@@ -354,7 +354,7 @@ class Bootstrap implements Model_Interface {
     public function plugin_settings_action_link( $links ) {
         // Important Note: Replace the link "href" with the proper location of the settings page
         // The example below assumes you are using a settings page integrated within WooCommerce settings.
-        $settings_link = '<a href="admin.php?page=wc-settings&tab=bswc_settings">' . __( 'Settings', 'block-scumbags-wc' ) . '</a>';
+        $settings_link = '<a href="edit.php?post_type=' . $this->_constants->POST_TYPE_WP_LOKR_JOB_LISTINGS . '">' . __( 'Settings', 'wp-lokr' ) . '</a>';
         array_unshift( $links, $settings_link );
 
         return $links;
@@ -385,5 +385,8 @@ class Bootstrap implements Model_Interface {
 
         // Execute codes that need to run on 'init' hook.
         add_action( 'init', array( $this, 'initialize' ) );
+
+        // Add settings link to plugin action links.
+        add_filter( 'plugin_action_links_' . $this->_constants->PLUGIN_BASENAME, array( $this, 'plugin_settings_action_link' ) );
     }
 }
