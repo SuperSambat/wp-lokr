@@ -23,7 +23,36 @@
     <exclude name="Squiz.Commenting.FileComment"/>
     <exclude name="Squiz.Commenting.ClassComment.TagNotAllowed"/>
   </rule>
+
+  <!-- Custom sanitization functions from WooCommerce. --> 
+  <rule ref="WordPress.Security.ValidatedSanitizedInput">
+    <properties>
+      <property name="customSanitizingFunctions" type="array" value="wp_verify_nonce,wc_clean,wc_sanitize_tooltip,wc_format_decimal,wc_stock_amount,wc_sanitize_permalink,wc_sanitize_textarea" />
+    </properties>
+  </rule>
+
+  <!-- Custom escaping functions from WooCommerce. --> 
+  <rule ref="WordPress.Security.EscapeOutput">
+    <properties>
+      <property name="customEscapingFunctions" type="array" value="wp_verify_nonce,wc_help_tip,wc_sanitize_tooltip,wc_selected,wc_kses_notice,wc_esc_json,wc_query_string_form_fields,wc_make_phone_clickable" />
+    </properties>
+  </rule>
+
+  <rule ref="WordPress.WP.Capabilities">
+    <properties>
+      <property name="custom_capabilities" type="array" value="manage_woocommerce,edit_shop_coupons,edit_private_products,edit_shop_orders,edit_shop_orders" />
+    </properties>
+  </rule>
+
   <!-- Tests that the file name and the name of the class contained within the file match. -->
-  <!-- <rule ref="Squiz.Classes.ClassFileName"/> -->
+  <rule ref="Squiz.Classes.ClassFileName"/>
+
+  <rule ref="WordPress.WP.I18n">
+    <properties>
+      <property name="text_domain" type="array">
+        <element value="wp-lokr"/> <!-- Change this value to your theme or plugin slug. -->
+      </property>
+    </properties>
+  </rule> 
 
 </ruleset>

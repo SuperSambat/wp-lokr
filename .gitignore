@@ -1,0 +1,8 @@
+syntax: glob
+.idea/
+.DS_Store
+/.cache
+logs/
+node_modules
+*.map
+*.LICENSE.txt
