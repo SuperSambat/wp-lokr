@@ -26,6 +26,9 @@ use WP_Lokr\Abstracts\Abstract_Main_Plugin_Class;
 use WP_Lokr\Helpers\Helper_Functions;
 use WP_Lokr\Helpers\Plugin_Constants;
 use WP_Lokr\Interfaces\Model_Interface;
+use WP_Lokr\Models\Bootstrap;
+use WP_Lokr\Models\Script_Loader;
+// use WP_Lokr\Models\Admin;
 
 /**
  * Register plugin autoloader.
@@ -185,8 +188,8 @@ class WP_Lokr extends Abstract_Main_Plugin_Class { // phpcs:ignore
         );
         $deactivatables = array();
 
-        // Bootstrap::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions, $activatables, $initiables, $deactivatables );
-        // Script_Loader::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions );
+        Bootstrap::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions, $activatables, $initiables, $deactivatables );
+        Script_Loader::get_instance( $this, $this->Plugin_Constants, $this->Helper_Functions );
     }
 
     /**
